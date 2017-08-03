@@ -245,7 +245,7 @@ This is bound dynamically while the checks run.")
           (package-lint--check-reserved-keybindings)
           (package-lint--check-keywords-list)
           (package-lint--check-url-header)
-          (package-lint--check-package-version-present)
+          ;; (package-lint--check-package-version-present)
           (package-lint--check-lexical-binding-is-on-first-line)
           (package-lint--check-objects-by-regexp
            "(define-minor-mode\\s-"
@@ -255,10 +255,10 @@ This is bound dynamically while the checks run.")
            #'package-lint--check-globalized-minor-mode)
           (package-lint--check-objects-by-regexp
            "(defgroup\\s-" #'package-lint--check-defgroup)
-          (let ((desc (package-lint--check-package-el-can-parse)))
-            (when desc
-              (package-lint--check-package-summary desc)
-              (package-lint--check-provide-form desc)))
+          ;; (let ((desc (package-lint--check-package-el-can-parse)))
+          ;;   (when desc
+          ;;     (package-lint--check-package-summary desc)
+          ;;     (package-lint--check-provide-form desc)))
           (let ((deps (package-lint--check-dependency-list)))
             (package-lint--check-lexical-binding-requires-emacs-24 deps)
             (package-lint--check-libraries-available-in-emacs deps)
